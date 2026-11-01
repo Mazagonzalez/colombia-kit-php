@@ -1,0 +1,74 @@
+{
+  "tiposVia": [
+    {
+      "nombre": "Carrera",
+      "corto": "Cra",
+      "variantes": ["carrera", "cra", "kra", "cr", "kr", "k", "carr", "crr", "krr"]
+    },
+    { "nombre": "Calle", "corto": "Cl", "variantes": ["calle", "cl", "cll", "clle", "cal", "c"] },
+    { "nombre": "Avenida", "corto": "Av", "variantes": ["avenida", "av", "avda", "ave"] },
+    {
+      "nombre": "Avenida Calle",
+      "corto": "Av Cl",
+      "variantes": ["avenida calle", "av calle", "av cl", "av cll", "avda calle", "ave calle", "ac"]
+    },
+    {
+      "nombre": "Avenida Carrera",
+      "corto": "Av Cra",
+      "variantes": [
+        "avenida carrera",
+        "av carrera",
+        "av cra",
+        "av cr",
+        "av kr",
+        "av kra",
+        "avda carrera",
+        "avda cra",
+        "ave carrera",
+        "ak"
+      ]
+    },
+    {
+      "nombre": "Diagonal",
+      "corto": "Dg",
+      "variantes": ["diagonal", "dg", "diag", "dgl"]
+    },
+    {
+      "nombre": "Transversal",
+      "corto": "Tv",
+      "variantes": ["transversal", "tv", "trans", "transv", "tranv", "trv"]
+    },
+    { "nombre": "Circular", "corto": "Cq", "variantes": ["circular", "cq", "circ"] },
+    { "nombre": "Circunvalar", "corto": "Cv", "variantes": ["circunvalar", "cv", "circunv"] },
+    { "nombre": "Autopista", "corto": "Aut", "variantes": ["autopista", "aut", "au", "autop"] },
+    { "nombre": "Troncal", "corto": "Troncal", "variantes": ["troncal"] },
+    { "nombre": "Vía", "corto": "Vía", "variantes": ["via"] }
+  ],
+  "cuadrantes": [
+    { "nombre": "Norte", "variantes": ["norte", "n"] },
+    { "nombre": "Sur", "variantes": ["sur", "s"] },
+    { "nombre": "Este", "variantes": ["este", "oriente"] },
+    { "nombre": "Oeste", "variantes": ["oeste", "occidente", "oe", "o"] }
+  ],
+  "marcadores": ["#", "no", "n", "nº", "nro", "num", "numero"],
+  "guiones": ["-", "\u2013", "\u2014", "\u2010", "\u2212", "\u00ad"],
+  "complementos": [
+    { "nombre": "Apartamento", "corto": "Apto", "variantes": ["apartamento", "apto", "apt", "ap"] },
+    { "nombre": "Torre", "corto": "Torre", "variantes": ["torre", "to"] },
+    { "nombre": "Interior", "corto": "Int", "variantes": ["interior", "int", "in"] },
+    { "nombre": "Local", "corto": "Local", "variantes": ["local", "loc", "lc"] },
+    { "nombre": "Oficina", "corto": "Of", "variantes": ["oficina", "ofic", "ofi", "of"] },
+    { "nombre": "Piso", "corto": "Piso", "variantes": ["piso", "pi"] },
+    { "nombre": "Edificio", "corto": "Ed", "variantes": ["edificio", "edif", "ed"] },
+    { "nombre": "Bloque", "corto": "Bloque", "variantes": ["bloque", "bl"] },
+    { "nombre": "Manzana", "corto": "Mz", "variantes": ["manzana", "mza", "mz"] },
+    { "nombre": "Casa", "corto": "Casa", "variantes": ["casa", "cs"] },
+    { "nombre": "Barrio", "corto": "Barrio", "variantes": ["barrio", "brr", "br"] },
+    { "nombre": "Consultorio", "corto": "Cons", "variantes": ["consultorio", "cons"] },
+    { "nombre": "Bodega", "corto": "Bodega", "variantes": ["bodega", "bod", "bg"] },
+    { "nombre": "Conjunto", "corto": "Conj", "variantes": ["conjunto", "conj"] },
+    { "nombre": "Etapa", "corto": "Etapa", "variantes": ["etapa", "et"] },
+    { "nombre": "Urbanización", "corto": "Urb", "variantes": ["urbanizacion", "urb"] },
+    { "nombre": "Lote", "corto": "Lote", "variantes": ["lote", "lt"] }
+  ]
+}

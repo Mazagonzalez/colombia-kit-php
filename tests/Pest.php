@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+use ColombiaKit\Tests\Laravel\TestCase;
+
+uses(TestCase::class)->in('Laravel');
+
 /**
  * Lee un JSON de la raíz del monorepo: `fixtures/` o `data/`.
  *

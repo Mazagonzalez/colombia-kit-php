@@ -14,12 +14,28 @@
     },
     "require-dev": {
         "laravel/pint": "^1.0",
+        "orchestra/testbench": "^9.0 || ^10.0 || ^11.0",
         "pestphp/pest": "^3.0 || ^4.0 || ^5.0",
         "phpstan/phpstan": "^2.0"
+    },
+    "suggest": {
+        "laravel/framework": "Para usar las reglas de validación y los mensajes en español (Laravel 11 o superior)."
     },
     "autoload": {
         "psr-4": {
             "ColombiaKit\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ColombiaKit\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ColombiaKit\\Laravel\\ColombiaKitServiceProvider"
+            ]
         }
     },
     "config": {

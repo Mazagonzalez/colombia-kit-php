@@ -79,6 +79,61 @@ Direcciones::parsear('Cra 7 con Cl 16'); // null
 
 Las claves `letraVia`, `bisVia`, `letraBisVia`, `cuadranteVia`, `letraCruce`, `bisCruce`, `letraBisCruce`, `cuadranteCruce` y `complemento` solo aparecen si la dirección las trae. `null` no es un error: significa que el texto no se pudo interpretar con seguridad, así que conviene guardar el original.
 
+## Laravel
+
+La integración es opcional: el paquete no depende de Laravel. Si lo usas, Laravel la descubre sola al instalar el paquete y no hay que configurar nada. Se prueba con Laravel 11, 12 y 13.
+
+Composer bloquea las instalaciones nuevas de Laravel 11 por avisos de seguridad sin corregir, así que conviene actualizar a una versión más reciente.
+
+```php
+use ColombiaKit\Laravel\Rules\DireccionColombiana;
+use ColombiaKit\Laravel\Rules\MunicipioValido;
+use ColombiaKit\Laravel\Rules\Nit;
+
+$request->validate([
+    'nit' => ['required', new Nit],
+    'ciudad' => ['required', new MunicipioValido],
+    'direccion' => ['required', new DireccionColombiana],
+]);
+
+// Igual, como texto:
+$request->validate([
+    'nit' => 'required|nit',
+    'ciudad' => 'required|municipio',
+    'direccion' => 'required|direccion',
+]);
+```
+
+| Clase                         | Texto          | Qué acepta                                                                    |
+| ----------------------------- | -------------- | ----------------------------------------------------------------------------- |
+| `new Nit`                     | `nit`          | NIT con dígito de verificación correcto. Sin DV no pasa                       |
+| `new MunicipioValido`         | `municipio`    | Código de municipio de 5 dígitos, como texto. No acepta nombres ni departamentos |
+| `new MunicipioValido('05')`   | `municipio:05` | Lo mismo, y además el municipio debe ser de ese departamento                  |
+| `new DireccionColombiana`     | `direccion`    | Texto que `Direcciones::parsear()` puede interpretar                          |
+
+`DireccionColombiana` rechaza referencias reales como `Km 5 vía Tunja` o `Cra 7 con Cl 16`. Si tu formulario debe aceptar direcciones rurales, no la uses: guarda el texto y llama a `Direcciones::parsear()` para los datos que sí se puedan separar.
+
+Como en las reglas de Laravel, los valores vacíos no se validan: usa `required` o `nullable` según el caso.
+
+Para cambiar el departamento según otro campo del formulario:
+
+```php
+$request->validate([
+    'departamento' => 'required|string',
+    'ciudad' => ['required', new MunicipioValido($request->string('departamento')->toString())],
+]);
+```
+
+### Mensajes de error
+
+Vienen en español, aunque tu aplicación siga con el idioma `en` por defecto. Para cambiarlos, publica el archivo de traducción:
+
+```bash
+php artisan vendor:publish --tag=colombia-kit-lang
+```
+
+Quedan en `lang/vendor/colombia-kit/es/validation.php`. Para otro idioma, agrega su carpeta junto a `es`.
+
 ## Licencia
 
 El código usa licencia [MIT](LICENSE).

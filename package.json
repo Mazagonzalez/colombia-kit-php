@@ -1,0 +1,6 @@
+{
+  "name": "colombia-kit-php",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Solo para que Changesets lleve la versión de PHP. El paquete se publica en Packagist con composer.json."
+}

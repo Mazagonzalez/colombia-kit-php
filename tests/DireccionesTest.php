@@ -81,17 +81,10 @@ describe('formatear', function () use ($fixtures, $parseables) {
             ->and(Direcciones::formatear($direccion, estilo: 'largo'))->toBe($caso['largo']);
     })->with(casos($fixtures['formatear'], 'entrada'));
 
-    it('devuelve null si no recibe una dirección', function () {
-        expect(Direcciones::formatear(null))->toBeNull()
-            ->and(Direcciones::formatear('Cra 7'))->toBeNull()
-            ->and(Direcciones::formatear(['tipoVia' => 'Carrera']))->toBeNull()
-            ->and(Direcciones::formatear([
-                'tipoVia' => 'Otro',
-                'numeroVia' => '7',
-                'numeroCruce' => '32',
-                'placa' => '16',
-            ]))->toBeNull();
-    });
+    it('datos: $descripcion', function (array $caso) {
+        expect(Direcciones::formatear($caso['entrada']))->toBe($caso['corto'])
+            ->and(Direcciones::formatear($caso['entrada'], estilo: 'largo'))->toBe($caso['largo']);
+    })->with(casos($fixtures['formatearDatos'], 'descripcion'));
 
     it('conserva los datos al volver a parsear: $entrada', function (array $caso) {
         $direccion = ordenar($caso['salida']);

@@ -5,8 +5,6 @@ Utilidades para datos colombianos en PHP: NIT, DIVIPOLA y direcciones. Da los mi
 - PHP 8.2 o superior.
 - Sin dependencias ni extensiones obligatorias: no necesita `intl` ni `mbstring`.
 
-> **Estado:** en desarrollo, todavía no está publicado en Packagist.
-
 > **¿Ves esto en `colombia-kit-php`?** Ese repo es una copia automática de solo lectura. Los issues y los PR van en [colombia-kit](https://github.com/Mazagonzalez/colombia-kit), porque aquí cualquier cambio se perdería con la siguiente copia.
 
 ## Instalación
